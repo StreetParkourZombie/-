@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace TaiSuu
 {
@@ -11,12 +12,13 @@ namespace TaiSuu
         // Check balance and bet
         static bool BetandCheck(double userBalance,ref  double betAmount)
         {
-            if (userBalance >= 500000)
+            if (userBalance >= 500000) // Check if the user has enough balance
             {
+                // Input bet amount
                 Console.Write("- Nhập số tiền muốn cược (phải từ 500K đồng trở lên): ");
                 double.TryParse(Console.ReadLine(), out betAmount);
 
-                while (true)
+                while (true) // Check whether the bet amount inputed is approriate or not
                 {
                     if(betAmount < 500000)
                     {
@@ -36,7 +38,7 @@ namespace TaiSuu
                     }
                 }
             }
-            else
+            else // If the user don't have enough balance, return false
             {
                 Console.WriteLine("... Số dư của bạn không đủ để tiếp tục. Số dư cần ít nhất 500K ...\n\n\n");
                 return false;
@@ -48,19 +50,19 @@ namespace TaiSuu
         // Check result
         static void annouceResult(bool result, ref double userBalance, ref double betAmount)
         {
-            if (result)
+            if (result) // The case the user wins
             {
                 userBalance += betAmount;
                 betAmount = 0; // Reset bet amount for a new bet
                 Console.WriteLine("====! Bạn đã thắng !====");
             }
-            else
+            else // The case the user loses
             {
                 userBalance -= betAmount;
                 betAmount = 0; // Reset bet amount for a new bet
                 Console.WriteLine(".... Bạn thua ....");
             }
-            Console.WriteLine(" ==>  Số dư của bạn: {0}  <===",userBalance);
+            Console.WriteLine(" ==>  Số dư của bạn: {0}  <===",userBalance); // Annouce user's balance
         }
 
         //// Odd/Even Bets
@@ -78,8 +80,11 @@ namespace TaiSuu
             bool isBetEven = bet % 2 == 0;
 
             Console.WriteLine("Xúc xắc 1: {0}", res1);
+            Thread.Sleep(1500);
             Console.WriteLine("Xúc xắc 2: {0}", res2);
+            Thread.Sleep(1500);
             Console.WriteLine("Xúc xắc 3: {0}", res3);
+            Thread.Sleep(1500);
 
             return isEven == isBetEven;
 

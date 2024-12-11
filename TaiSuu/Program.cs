@@ -80,11 +80,8 @@ namespace TaiSuu
             bool isBetEven = bet % 2 == 0;
 
             Console.WriteLine("Xúc xắc 1: {0}", res1);
-            Thread.Sleep(1500);
             Console.WriteLine("Xúc xắc 2: {0}", res2);
-            Thread.Sleep(1500);
             Console.WriteLine("Xúc xắc 3: {0}", res3);
-            Thread.Sleep(1500);
 
             return isEven == isBetEven;
 

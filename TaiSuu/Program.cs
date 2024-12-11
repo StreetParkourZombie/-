@@ -36,6 +36,7 @@ namespace TaiSuu
                         if (betAmount >= 500000 && betAmount <= userBalance)
                             break;
                     }
+                    else break;
                 }
             }
             else // If the user don't have enough balance, return false

@@ -1,7 +1,8 @@
-Tính năng:
-- Cược chẵn/lẻ
-- Xem số dư
-- Thoát chương trình
+Features:
+- Even/odd betting
+- Balance information
+- Exit the game
 
-Lưu ý:
-- Chúng tôi không chịu trách nhiệm về những gì bạn làm khi dùng tài nguyên tại trang này một cách phi pháp
+# Warning:
+- No Responsibility: The repository owner is not responsible for misuse of materials provided, including violation of academic regulations or misconduct.
+
